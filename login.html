@@ -15,6 +15,24 @@
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Custom css -->
     <link href="css/login.css" rel="stylesheet">
+
+    <script>
+      function checkSign(){
+        let username = document.getElementById("inputUsername");
+        let password = document.getElementById("inputPassword");
+        if(username.value == "admin" && password.value == "admin"){
+          console.log("执行用户名密码正确判断");
+          jumpToHtml('html/index.html');
+        } else if(username.value != "" && password.value != ""){
+          console.log("执行用户名密码不正确判断");
+          alert("用户名或密码错误");
+        }
+      };
+      function jumpToHtml(url){
+        window.location.href = url;
+        window.event.returnValue = false;
+      };
+    </script>
   </head>
 
   <body background="#" style="background-repeat:no-repeat; background-size:100% 100%; background-attachment:fixed;">
@@ -24,14 +42,14 @@
         </div>
         <form class="form-signin">
             <h3 class="form-signin-heading">Please sign in</h3>
-            <input type="text" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
+            <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
             <div class="checkbox">
               <label>
                   <input type="checkbox" value="remember-me"> Remember me
               </label>
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="return checkSign()">登录</button>
         </form>
         
     </div> <!-- /container -->
