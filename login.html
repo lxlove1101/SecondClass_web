@@ -10,12 +10,19 @@
 
     <title>江西师范大学第二课堂</title>
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="frame/bootstrap/css/bootstrap.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="frame/bootstrap/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Custom css -->
     <link href="css/login.css" rel="stylesheet">
 
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件 -->
+    <script src="frame/bootstrap/js/bootstrap.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="frame/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+    
     <script>
       function checkSign(){
         let username = document.getElementById("inputUsername");
@@ -40,6 +47,7 @@
         <div class="page-header">
             <h1>江西师范大学  <small>第二课堂学分认证系统</small></h1>
         </div>
+        <!-- 登录表单 -->
         <form class="form-signin">
             <h3 class="form-signin-heading">Please sign in</h3>
             <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
@@ -51,14 +59,9 @@
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="return checkSign()">登录</button>
         </form>
-        
+        <!-- /登录表单 -->
     </div> <!-- /container -->
 
-    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery -->
-    <script src="js/jquery-3.3.1.js"></script>
-    <!-- 加载 Bootstrap 的所有 JavaScript 插件 -->
-    <script src="js/bootstrap.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    
   </body>
 </html>
