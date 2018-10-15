@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="frame/layui/css/layui.css">
     <!-- 引入基本css样式 -->
     <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/login.css">
     <!-- 引入bootstrap样式 -->
     <link rel="stylesheet" href="frame/bootstrap/css/bootstrap.css">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -21,33 +22,42 @@
 </head>
 
 <body>
-    <div class="page-header">
-        <h1>&nbsp;&nbsp;江西师范大学&nbsp;&nbsp;<small>第二课堂学分认证系统</small></h1>
+    <div class="jxnud2kt-login">
+        <div class="jxnud2kt-login-bg">
+            <div class="page-header">
+                <h1>&nbsp;&nbsp;江西师范大学&nbsp;&nbsp;<small>第二课堂学分认证系统</small></h1>
+            </div>
+            <!-- 登录窗口 -->
+            <div class="login-main">
+                <header class="layui-elip">Please Sign In</header>
+                <form class="layui-form">
+                    <div class="layui-input-inline">
+                        <!-- NAME: account -->
+                        <input type="text" name="account" required lay-verify="required" placeholder="用户名" autocomplete="off"
+                            class="layui-input">
+                    </div>
+                    <div class="layui-input-inline">
+                        <!-- NAME: password -->
+                        <input type="password" name="password" required lay-verify="required" placeholder="密码"
+                            autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-input-inline">
+                        <!-- NAME: rememberMe-->
+                        <input type="checkbox" name="rememberMe" title="记住我" value="true" lay-skin="primary" layui-bg-orange	>
+                    </div>
+                    <div class="layui-input-inline login-btn">
+                        <button lay-submit lay-filter="login_hash" class="layui-btn layui-btn-radius">登录</button>
+                    </div>
+                    <hr />
+                    <div class="kit-login-row" style="margin-bottom:0;">
+                        <a href="javascript:;" style="color: rgb(153, 153, 153); text-decoration: none; font-size: 13px;"
+                            id="forgot">忘记密码</a>
+                    </div>
+                </form>
+            </div>
+            <!-- end 登录窗口 -->
+        </div>
     </div>
-    <!-- 登录窗口 -->
-    <div class="login-main">
-        <header class="layui-elip">Please Sign In</header>
-        <form class="layui-form">
-            <div class="layui-input-inline">
-                <!-- NAME: account -->
-                <input type="text" name="account" required lay-verify="required" placeholder="用户名" autocomplete="off"
-                    class="layui-input">
-            </div>
-            <div class="layui-input-inline">
-                <!-- NAME: password -->
-                <input type="password" name="password" required lay-verify="required" placeholder="密码" autocomplete="off"
-                    class="layui-input">
-            </div>
-            <div class="layui-input-inline login-btn">
-                <button lay-submit lay-filter="login_hash" class="layui-btn layui-btn-warm layui-btn-radius">登录</button>
-            </div>
-            <hr />
-            <div class="kit-login-row" style="margin-bottom:0;">
-                <a href="javascript:;" style="color: rgb(153, 153, 153); text-decoration: none; font-size: 13px;" id="forgot">忘记密码</a>
-            </div>
-        </form>
-    </div>
-    <!-- end 登录窗口 -->
 
     <!-- Script -->
     <!-- 引入LayUI模块化js -->
