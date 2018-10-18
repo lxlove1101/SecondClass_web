@@ -1,0 +1,95 @@
+<!-- Create by LiaoXiang -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>江西师范大学第二课堂认证系统</title>
+    <link rel="icon" href="/resources/pictures/jxnu_logo.png">
+    <!-- 引入LayUI样式 -->
+    <link rel="stylesheet" href="/lib/layui/css/layui.css">
+    <!-- 引入基本css样式 -->
+    <link rel="stylesheet" href="/css/basic.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <!-- 引入bootstrap样式 -->
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.css">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link rel="stylesheet" href="/lib/bootstrap/css/ie10-viewport-bug-workaround.css">
+
+</head>
+
+<body>
+    <div class="kit-login">
+        <div class="kit-login-bg">
+            <div class="page-header">
+                <h1>&nbsp;&nbsp;江西师范大学&nbsp;&nbsp;<small>第二课堂学分认证系统</small></h1>
+            </div>
+            <!-- 登录窗口 -->
+            <div class="login-main">
+                <header class="layui-elip">Please Sign In</header>
+                <form class="layui-form">
+                    <div class="layui-input-inline">
+                        <!-- NAME: account -->
+                        <input type="text" name="account" required lay-verify="required" placeholder="用户名" autocomplete="off"
+                            class="layui-input">
+                    </div>
+                    <div class="layui-input-inline">
+                        <!-- NAME: password -->
+                        <input type="password" name="password" required lay-verify="required" placeholder="密码"
+                            autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-input-inline">
+                        <!-- NAME: rememberMe-->
+                        <input type="checkbox" name="rememberMe" title="记住我" value="true" lay-skin="primary" layui-bg-orange	>
+                    </div>
+                    <div class="layui-input-inline login-btn">
+                        <button lay-submit lay-filter="login_hash" class="layui-btn layui-btn-radius">登录</button>
+                    </div>
+                    <hr />
+                    <div class="kit-login-row" style="margin-bottom:0;">
+                        <a href="javascript:;" style="color: rgb(153, 153, 153); text-decoration: none; font-size: 13px;"
+                            id="forgot">忘记密码</a>
+                    </div>
+                </form>
+            </div>
+            <!-- end 登录窗口 -->
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="/lib/polyfill.min.js"></script>
+    <!-- 引入LayUI模块化js -->
+    <script src="/lib/layui/layui.js"></script>
+    <script type="text/javascript">
+        layui.use(['layer', 'form'], function () {
+            //操作对象
+            var form = layui.form,
+                $ = layui.jquery;
+            //code...
+            $('#forgot').on('click', function () {
+                layer.msg('请联系管理员.');
+            });
+            //监听提交
+            form.on('submit(login_hash)', function (data) {
+                console.log(data.field);
+                if (data.field.account === 'admin' && data.field.password === 'admin') {
+                    var layIndex = layer.load(2, {
+                        shade: [0.1, '#393D49']
+                    });
+                    setTimeout(function () {
+                        location.href = '/index.html';
+                    }, 2000);
+                } else {
+                    layer.msg("用户名或密码错误");
+                }
+                return false;
+            });
+
+        });
+    </script>
+</body>
+
+</html>
