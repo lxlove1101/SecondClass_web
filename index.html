@@ -27,14 +27,14 @@
                 </div>
             </div>
             <div class="layui-layout-left">
-                <!-- <div class="kit-search">
-                  <form action="/">
-                    <input type="text" name="keyword" class="kit-search-input" placeholder="关键字..." />
-                    <button class="kit-search-btn" title="搜索" type="submit">
-                      <i class="layui-icon">&#xe615;</i>
-                    </button>
-                  </form>
-                </div> -->
+                <div class="kit-search">
+                    <form action="/">
+                        <input type="text" name="keyword" class="kit-search-input" placeholder="关键字..." />
+                        <button class="kit-search-btn" title="搜索" type="submit">
+                            <i class="layui-icon">&#xe615;</i>
+                        </button>
+                    </form>
+                </div>
             </div>
             <div class="layui-layout-right">
                 <ul class="kit-nav" lay-filter="header_right">
@@ -89,29 +89,76 @@
         <div class="layui-side" kit-side="true">
             <div class="layui-side-scroll">
                 <div id="menu-box">
+
                     <ul class="kit-menu">
+
+                        <!-- 一部分 -->
                         <li class="kit-menu-item">
                             <a href="#/">
                                 <i class="layui-icon"></i>
                                 <span>首页</span>
                             </a>
                         </li>
-                        <li class="kit-menu-item layui-show">
+                        <!--学生入口-->
+                        <li class="kit-menu-item">
                             <a href="javascript:;">
                                 <i class="layui-icon"></i>
-                                <span>项目认定</span>
+                                <span>学生入口</span>
                             </a>
                             <ul class="kit-menu-child layui-anim layui-anim-upbit">
                                 <li class="kit-menu-item">
                                     <a href="#/layui/grid">
                                         <i class="layui-icon"></i>
-                                        <span>学期申报</span>
+                                        <span>页面1</span>
+                                    </a>
+                                </li>
+                                <li class="kit-menu-item">
+                                    <a href="#/layui/grid">
+                                        <i class="layui-icon"></i>
+                                        <span>页面2</span>
+                                    </a>
+                                    <ul class="kit-menu-child layui-anim layui-anim-upbit">
+                                        <li class="kit-menu-item">
+                                            <a href="#/layui/button">
+                                                <i class="layui-icon">&#xe62e;</i>
+                                                <span>页面2.1</span>
+                                            </a>
+                                        </li>
+                                        <li class="kit-menu-item">
+                                            <a href="#/layui/button">
+                                                <i class="layui-icon">&#xe62e;</i>
+                                                <span>页面2.2</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="kit-menu-item">
+                                    <a href="#/layui/grid">
+                                        <i class="layui-icon"></i>
+                                        <span>页面3</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <!-- 二部分 -->
+                        <li class="kit-menu-item layui-show">
+                            <a href="javascript:;">
+                                <i class="layui-icon"></i>
+                                <span>Layui组件</span>
+                            </a>
+                            <ul class="kit-menu-child layui-anim layui-anim-upbit">
+                                <li class="kit-menu-item">
+                                    <a href="#/layui/grid">
+                                        <i class="layui-icon"></i>
+                                        <span>Grid</span>
                                     </a>
                                 </li>
                                 <li class="kit-menu-item">
                                     <a href="javascript:;">
                                         <i class="layui-icon"></i>
-                                        <span>材料上传</span>
+                                        <span>基本元素</span>
                                     </a>
                                     <ul class="kit-menu-child layui-anim layui-anim-upbit">
                                         <li class="kit-menu-item">
@@ -182,10 +229,11 @@
                                         </li>
                                     </ul>
                                 </li>
+
                                 <li class="kit-menu-item layui-show">
                                     <a href="javascript:;">
                                         <i class="layui-icon"></i>
-                                        <span>新项目审核</span>
+                                        <span>组件</span>
                                     </a>
                                     <ul class="kit-menu-child layui-anim layui-anim-upbit">
                                         <li class="kit-menu-item">
@@ -252,10 +300,11 @@
                                 </li>
                             </ul>
                         </li>
+                        <!-- 三部分 -->
                         <li class="kit-menu-item">
                             <a href="javascript:;">
                                 <i class="layui-icon"></i>
-                                <span>工作量认定</span>
+                                <span>组件</span>
                             </a>
                             <ul class="kit-menu-child layui-anim layui-anim-upbit">
                                 <li class="kit-menu-item">
@@ -266,10 +315,11 @@
                                 </li>
                             </ul>
                         </li>
+                        <!-- 四部分 -->
                         <li class="kit-menu-item">
                             <a href="javascript:;">
                                 <i class="layui-icon"></i>
-                                <span>管理员项</span>
+                                <span>异常页</span>
                             </a>
                             <ul class="kit-menu-child layui-anim layui-anim-upbit">
                                 <li class="kit-menu-item">
@@ -292,6 +342,7 @@
                                 </li>
                             </ul>
                         </li>
+                        <!-- 五部分 -->
                         <li class="kit-menu-item">
                             <a href="javascript:;" class="child">
                                 <i class="layui-icon"></i>
@@ -340,6 +391,7 @@
                                 </li>
                             </ul>
                         </li>
+                        <!-- 六部分 -->
                         <li class="kit-menu-item">
                             <a href="javascript:;" class="child">
                                 <i class="layui-icon"></i>
@@ -392,22 +444,27 @@
                                 </li>
                             </ul>
                         </li>
+                        <!-- 七部分 -->
                         <li class="kit-menu-item">
                             <a href="http://www.jxnu.edu.cn/" target="_blank">
                                 <i class="layui-icon"></i>
                                 <span>师大官网</span>
                             </a>
                         </li>
+                        <!-- 八部分 -->
                         <li class="kit-menu-item">
                             <a href="http://jwc.jxnu.edu.cn/" target="_blank">
                                 <i class="layui-icon"></i>
                                 <span>教务在线</span>
                             </a>
                         </li>
+
                     </ul>
+
                 </div>
-            </div>
-        </div>
+            </div><!-- class="layui-side-scroll" -->
+        </div><!-- class="layui-side" kit-side="true" -->
+
         <!-- main -->
         <div class="layui-body" kit-body="true">
             <router-view></router-view>
