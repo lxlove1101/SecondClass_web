@@ -43,7 +43,8 @@
                     </div>
                     <div class="layui-input-inline">
                         <!-- NAME: rememberMe-->
-                        <input type="checkbox" name="rememberMe" title="记住我" value="true" lay-skin="primary" layui-bg-orange	>
+                        <input type="checkbox" name="rememberMe" title="记住我" value="true" lay-skin="primary"
+                            layui-bg-orange>
                     </div>
                     <div class="layui-input-inline login-btn">
                         <button lay-submit lay-filter="login_hash" class="layui-btn layui-btn-radius">登录</button>
@@ -64,78 +65,109 @@
     <!-- 引入LayUI模块化js -->
     <script src="/lib/layui/layui.js"></script>
     <script type="text/javascript">
-        layui.use(['layer', 'form'], function () {
+        layui.use(['layer', 'axios', 'lodash', 'form'], function () {
             //操作对象
             var form = layui.form,
-                $ = layui.jquery;
+                axios = layui.axios,
+                $ = layui.jquery,
+                _ = layui.lodash;
             //code...
             $('#forgot').on('click', function () {
                 layer.msg('请联系管理员.');
             });
+            // //监听提交
+            // form.on('submit(login_hash)', function (data) {
+            //     console.log(data.field);
+            //     if (data.field.account === 'admin' && data.field.password === 'admin') {
+            //         var layIndex = layer.load(2, {
+            //             shade: [0.1, '#393D49']
+            //         });
+            //         setTimeout(function () {
+            //             location.href = '/index.html';
+            //         }, 2000);
+            //     } else {
+            //         layer.msg("用户名或密码错误");
+            //     }
+            //     return false;
+            // });
             //监听提交
             form.on('submit(login_hash)', function (data) {
+                var layIndex = layer.load(2, {
+                    shade: [0.1, '#393D49']
+                });
                 console.log(data.field);
-                if (data.field.account === 'admin' && data.field.password === 'admin') {
-                    var layIndex = layer.load(2, {
-                        shade: [0.1, '#393D49']
+                setTimeout(function () {
+                    // location.href = '/';
+                }, 2000);
+
+                // axios({
+                //     method: 'post',
+                //     url: 'http://localhost:8080/fragment_server/GetAllPersonSkillServlet',
+                //     data: data.field,
+                //     headers: {
+                //         'Access-Control-Allow-Origin': '*',
+                //         'Content-Type': 'application/json',
+                //     },
+                // }).then((response) => {
+                //     if (response.status === 500) {
+                //         throw new Error(response.statusText);
+                //     }
+                //     return response.data;
+                // }).then(function (res) {
+                //         setTimeout(() => {
+                //             if (res.success) {
+                //                 // var to = getParams(location.href);
+                //                 // location.href = to !== null && to.ReturnUrl !== undefined ? unescape(to.ReturnUrl) : '/';
+                //             } else {
+                //                 layer.msg(res.message);
+                //                 layer.close(layIndex);
+                //             }
+                //         }, 500);
+                //     })
+                //     .catch(function (err) {
+                //         console.log(err);
+                //         layer.close(layIndex);
+                //     });
+                axios.post('http://127.0.0.1:5500/test.json', data.field)
+                    .then((response) => {
+                        if (response.status === 500) {
+                            throw new Error(response.statusText);
+                        }
+                        return response.data;
+                    })
+                    .then(function (res) {
+                        setTimeout(() => {
+                            if (res.success) {
+                                // var to = getParams(location.href);
+                                // location.href = to !== null && to.ReturnUrl !== undefined ? unescape(to.ReturnUrl) : '/';
+                            } else {
+                                layer.msg(res.message);
+                                layer.close(layIndex);
+                            }
+                        }, 500);
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                        layer.close(layIndex);
                     });
-                    setTimeout(function () {
-                        location.href = '/index.html';
-                    }, 2000);
-                } else {
-                    layer.msg("用户名或密码错误");
-                }
                 return false;
             });
-// //监听提交
-// form.on('submit(login_hash)', function(data) {
-//         var layIndex = layer.load(2, {
-//           shade: [0.1, '#393D49']
-//         });
-//         console.log(data.field);
-//         setTimeout(function() {
-//           location.href = '/';
-//         }, 2000);
-//         axios.post('/api/account/checklogin', data.field)
-//           .then(function(response) {
-//             if (response.status === 500) {
-//               throw new Error(response.statusText);
-//             }
-//             return response.data;
-//           })
-//           .then(function(res) {
-//             setTimeout(function() {
-//               if (res.success) {
-//                 var to = getParams(location.href);
-//                 location.href = to !== null && to.ReturnUrl !== undefined ? unescape(to.ReturnUrl) : '/';
-//               } else {
-//                 layer.msg(res.message);
-//                 layer.close(layIndex);
-//               }
-//             }, 500);
-//           })
-//           .catch(function(err) {
-//             console.log(err);
-//             layer.close(layIndex);
-//           });
-//         return false;
-//       });
-            
+
 
         });
-    //     function getParams(href) {
-    //   var p = href.substr(href.indexOf('?') + 1);
-    //   if (href === p) return null;
-    //   var params = p.split('&');
-    //   var data = {};
-    //   _.forEach(params, function(item, index) {
-    //     var kv = item.split('=');
-    //     var key = kv[0];
-    //     var value = kv[1];
-    //     data[key] = value;
-    //   });
-    //   return data;
-    // }
+        function getParams(href) {
+            var p = href.substr(href.indexOf('?') + 1);
+            if (href === p) return null;
+            var params = p.split('&');
+            var data = {};
+            _.forEach(params, function (item, index) {
+                var kv = item.split('=');
+                var key = kv[0];
+                var value = kv[1];
+                data[key] = value;
+            });
+            return data;
+        }
     </script>
 </body>
 
