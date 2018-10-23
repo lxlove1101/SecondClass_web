@@ -27,7 +27,7 @@
 .kit-theme-default .layui-layout-admin .layui-header {
   height: 50px;
   box-sizing: border-box;
-  background-color: #373d41;
+  background-color: #f05050;
   z-index: 100000;
 }
 .kit-theme-default .layui-layout-admin .layui-header .layui-logo {
@@ -48,8 +48,8 @@
   cursor: pointer;
 }
 .kit-theme-default .layui-layout-admin .layui-header .layui-logo-toggle:hover {
-  background-color: #2a2f32;
-  color: #009688;
+  background-color: rgba(0, 0, 0, 0.09);
+  color: #e6e6e6;
   transition: all .2s;
   -webkit-transition: all .2s;
 }
@@ -62,11 +62,11 @@
   color: #fff;
 }
 .kit-theme-default .layui-layout-admin .layui-header .layui-logo-brand a:hover {
-  background-color: #2a2f32;
+  background-color: rgba(0, 0, 0, 0.09);
   transition: all .2s;
   -webkit-transition: all .2s;
   cursor: pointer;
-  color: #009688;
+  color: #e6e6e6;
 }
 .kit-theme-default .layui-layout-admin .layui-header .layui-layout-left {
   padding: 0 10px !important;
@@ -76,22 +76,22 @@
 }
 .kit-theme-default .layui-layout-admin .layui-header .layui-layout-right .kit-nav {
   line-height: 49px;
-  background-color: #373d41;
+  background-color: #f05050;
 }
 .kit-theme-default .layui-layout-admin .layui-header .layui-layout-right .kit-nav .kit-item a {
   color: #fff;
 }
 .kit-theme-default .layui-layout-admin .layui-header .layui-layout-right .kit-nav .kit-item a:hover {
-  color: #009688;
-  background-color: #2a2f32;
+  color: #e6e6e6;
+  background-color: rgba(0, 0, 0, 0.09);
 }
 .kit-theme-default .layui-layout-admin .layui-header .layui-layout-right .kit-nav .layui-this a {
-  background-color: #2a2f32;
-  color: #009688;
+  background-color: rgba(0, 0, 0, 0.09);
+  color: #e6e6e6;
 }
 .kit-theme-default .layui-layout-admin .layui-header .layui-layout-right .kit-nav .kit-nav-child {
-  background-color: #373d41;
-  border-top: 2px solid #009688;
+  background-color: #f05050;
+  border-top: 2px solid #e6e6e6;
 }
 .kit-theme-default .layui-layout-admin .layui-header .layui-nav-bar {
   height: 2px;
@@ -109,11 +109,11 @@
 }
 .kit-theme-default .layui-layout-admin .layui-side .layui-side-scroll {
   width: 200px;
-  background-color: #333744;
+  background-color: #fff;
 }
 .kit-theme-default .layui-layout-admin .layui-side .layui-side-scroll .kit-menu .kit-menu-item {
   text-align: left !important;
-  background-color: #42485b;
+  background-color: transparent;
 }
 .kit-theme-default .layui-layout-admin .layui-side .layui-side-scroll .kit-menu .layui-show > .kit-menu-child {
   display: block !important;
@@ -123,8 +123,8 @@
 }
 .kit-theme-default .layui-layout-admin .layui-side .layui-side-scroll .kit-menu .layui-this a {
   background-color: rgba(0, 0, 0, 0.09);
-  border-left: 3px solid #009688;
-  color: #009688;
+  border-left: 3px solid #ec2121;
+  color: #ec2121;
 }
 .kit-theme-default .layui-layout-admin .layui-side .layui-side-scroll .kit-menu .kit-menu-child {
   display: none;
@@ -140,13 +140,13 @@
 }
 .kit-theme-default .layui-layout-admin .layui-side .layui-side-scroll .kit-menu a {
   display: block;
-  color: #e6e6e6;
+  color: #515253;
   padding: 10px 25px 10px 15px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   position: relative;
-  border-left: 3px solid #333744;
+  border-left: 3px solid #fff;
 }
 .kit-theme-default .layui-layout-admin .layui-side .layui-side-scroll .kit-menu a.child::after {
   font-family: layui-icon !important;
@@ -157,9 +157,9 @@
   top: 14px;
 }
 .kit-theme-default .layui-layout-admin .layui-side .layui-side-scroll .kit-menu a:hover {
-  color: #009688;
+  color: #ec2121;
   background-color: rgba(0, 0, 0, 0.09) !important;
-  border-left: 3px solid #009688;
+  border-left: 3px solid #ec2121;
   transition: all .2s;
   -webkit-transition: all .2s;
 }
@@ -314,7 +314,7 @@
 }
 .kit-theme-default .layui-layout-admin .kit-tabs .kit-tabs-toolsbox ul .kit-item:hover a,
 .kit-theme-default .layui-layout-admin .kit-tabs .kit-tabs-toolsbox ul .layui-this a {
-  color: #009688;
+  color: #ec2121;
 }
 .kit-theme-default .layui-layout-admin .kit-tabs-body {
   top: 91px;
@@ -494,7 +494,7 @@
   background-color: rgba(0, 0, 0, 0.09);
   transition: all .2s;
   -webkit-transition: all .2s;
-  color: #009688;
+  color: #ec2121;
 }
 .kit-theme-default .kit-nav > .kit-item a.child {
   padding-right: 35px;
