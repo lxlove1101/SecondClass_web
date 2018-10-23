@@ -1,5 +1,22 @@
-kitadmin网址：http://kit.zhengjinfan.cn/#/
+﻿kitadmin网址：http://kit.zhengjinfan.cn/#/
 git：https://gitee.com/kitteam/kit_admin/
 
 baidu：
 https://blog.csdn.net/BingHongChaZuoAn/article/details/52851980
+
+
+axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，它本身具有以下特征：
+
+从浏览器中创建 XMLHttpRequest
+从 node.js 发出 http 请求
+支持 Promise API
+拦截请求和响应
+转换请求和响应数据
+取消请求
+自动转换JSON数据
+客户端支持防止CSRF/XSRF
+--------------------- 
+作者：WebCandy 
+来源：CSDN 
+原文：https://blog.csdn.net/twodogya/article/details/80223508 
+版权声明：本文为博主原创文章，转载请附上博文链接！

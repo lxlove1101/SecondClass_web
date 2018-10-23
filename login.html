@@ -87,8 +87,55 @@
                 }
                 return false;
             });
+// //监听提交
+// form.on('submit(login_hash)', function(data) {
+//         var layIndex = layer.load(2, {
+//           shade: [0.1, '#393D49']
+//         });
+//         console.log(data.field);
+//         setTimeout(function() {
+//           location.href = '/';
+//         }, 2000);
+//         axios.post('/api/account/checklogin', data.field)
+//           .then(function(response) {
+//             if (response.status === 500) {
+//               throw new Error(response.statusText);
+//             }
+//             return response.data;
+//           })
+//           .then(function(res) {
+//             setTimeout(function() {
+//               if (res.success) {
+//                 var to = getParams(location.href);
+//                 location.href = to !== null && to.ReturnUrl !== undefined ? unescape(to.ReturnUrl) : '/';
+//               } else {
+//                 layer.msg(res.message);
+//                 layer.close(layIndex);
+//               }
+//             }, 500);
+//           })
+//           .catch(function(err) {
+//             console.log(err);
+//             layer.close(layIndex);
+//           });
+//         return false;
+//       });
+            
 
         });
+    //     function getParams(href) {
+    //   var p = href.substr(href.indexOf('?') + 1);
+    //   if (href === p) return null;
+    //   var params = p.split('&');
+    //   var data = {};
+    //   _.forEach(params, function(item, index) {
+    //     var kv = item.split('=');
+    //     var key = kv[0];
+    //     var value = kv[1];
+    //     data[key] = value;
+    //   });
+    //   return data;
+    // }
     </script>
 </body>
 

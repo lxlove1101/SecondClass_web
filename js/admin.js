@@ -21,7 +21,7 @@ layui.define(mods, function (exports) {
       elem: '#app',
       loadType: 'SPA'
     };
-    this.version = '1.0.0';
+    this.version = '1.0.1';
   };
 
   Admin.prototype.ready = function (callback) {
@@ -97,7 +97,7 @@ layui.define(mods, function (exports) {
         });
       }
       if (target === 'help') {
-        layer.alert('QQ群：248049395，616153456');
+        layer.alert('请联系相关学院管理员');
       }
     });
 
