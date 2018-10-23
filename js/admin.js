@@ -3,7 +3,7 @@ var mods = [
   'tabs', 'menu', 'route', 'utils', 'component', 'kit'
 ];
 
-layui.define(mods, function(exports) {
+layui.define(mods, function (exports) {
   var element = layui.element,
     utils = layui.utils,
     $ = layui.jquery,
@@ -16,7 +16,7 @@ layui.define(mods, function(exports) {
     kit = layui.kit;
 
 
-  var Admin = function() {
+  var Admin = function () {
     this.config = {
       elem: '#app',
       loadType: 'SPA'
@@ -24,7 +24,7 @@ layui.define(mods, function(exports) {
     this.version = '1.0.0';
   };
 
-  Admin.prototype.ready = function(callback) {
+  Admin.prototype.ready = function (callback) {
     var that = this,
       config = that.config;
 
@@ -65,7 +65,7 @@ layui.define(mods, function(exports) {
       width: '50%', //可以设置百分比和px
     });
 
-    $('#cc').on('click', function() {
+    $('#cc').on('click', function () {
       var that = this;
       layui.sidebar.render({
         elem: that,
@@ -80,7 +80,7 @@ layui.define(mods, function(exports) {
       });
     });
     // 监听头部右侧 nav
-    component.on('nav(header_right)', function(_that) {
+    component.on('nav(header_right)', function (_that) {
       var target = _that.elem.attr('kit-target');
       if (target === 'setting') {
         // 绑定sidebar
@@ -114,7 +114,7 @@ layui.define(mods, function(exports) {
   }
 
   var _private = {
-    routeInit: function(config) {
+    routeInit: function (config) {
       var that = this;
       // route.set({
       //   beforeRender: function (route) {
@@ -325,10 +325,16 @@ layui.define(mods, function(exports) {
           path: '/exception/500',
           component: 'views/exception/500.html',
           name: '500'
+        },
+        // 新配置的路由 -> 学生界面
+        {
+          path: '/stu/commit',
+          component: 'views/students/page1.html',
+          name: 'commit'
         }]
       };
       if (config.loadType === 'TABS') {
-        routeOpts.onChanged = function() {
+        routeOpts.onChanged = function () {
           // 如果当前hash不存在选项卡列表中
           if (!tabs.existsByPath(location.hash)) {
             // 新增一个选项卡
@@ -343,7 +349,7 @@ layui.define(mods, function(exports) {
       route.setRoutes(routeOpts);
       return this;
     },
-    addTab: function(href, layid) {
+    addTab: function (href, layid) {
       var r = route.getRoute(href);
       if (r) {
         tabs.add({
@@ -356,13 +362,13 @@ layui.define(mods, function(exports) {
         });
       }
     },
-    menuInit: function(config) {
+    menuInit: function (config) {
       var that = this;
       // 配置menu
       menu.set({
         dynamicRender: false,
         isJump: config.loadType === 'SPA',
-        onClicked: function(obj) {
+        onClicked: function (obj) {
           if (config.loadType === 'TABS') {
             if (!obj.hasChild) {
               var data = obj.data;
@@ -381,15 +387,15 @@ layui.define(mods, function(exports) {
       }).render();
       return that;
     },
-    tabsInit: function() {
+    tabsInit: function () {
       tabs.set({
-        onChanged: function(layid) {
+        onChanged: function (layid) {
           // var tab = tabs.get(layid);
           // if (tab !== null) {
           //   utils.setUrlState(tab.title, tab.path);
           // }
         }
-      }).render(function(obj) {
+      }).render(function (obj) {
         // 如果只有首页的选项卡
         if (obj.isIndex) {
           route.render('#/');
@@ -399,7 +405,7 @@ layui.define(mods, function(exports) {
   }
 
   var admin = new Admin();
-  admin.ready(function() {
+  admin.ready(function () {
     console.log('Init successed.');
   });
 
